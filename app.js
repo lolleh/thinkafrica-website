@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMenu);
-      link.addEventListener('touchend', closeMenu);
     });
   }
 
