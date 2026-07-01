@@ -20,6 +20,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -656,6 +659,13 @@ a {
   position: relative;
   overflow: hidden;
   min-height: 400px;
+  aspect-ratio: 4/3;
+}
+
+@media (min-width: 768px) {
+  .dna-image {
+    aspect-ratio: auto;
+  }
 }
 
 .dna-image img {
@@ -856,11 +866,13 @@ a {
   position: relative;
   overflow: hidden;
   min-height: 350px;
+  aspect-ratio: 4/3;
   order: 2;
 }
 
 @media (min-width: 768px) {
   .cta-image {
+    aspect-ratio: auto;
     order: 2;
   }
 }
@@ -1257,6 +1269,13 @@ a {
   position: relative;
   min-height: 250px;
   overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+@media (min-width: 768px) {
+  .timeline-image {
+    aspect-ratio: auto;
+  }
 }
 
 .timeline-image img {
@@ -1384,6 +1403,13 @@ a {
   position: relative;
   min-height: 350px;
   overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+@media (min-width: 768px) {
+  .service-image {
+    aspect-ratio: auto;
+  }
 }
 
 .service-image img {
@@ -1668,7 +1694,7 @@ a {
   width: 100%;
   padding: 12px 16px;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 16px;
   color: var(--brown);
   background: #fff;
   border: 1.5px solid var(--border-gold);
@@ -1845,7 +1871,11 @@ a {
   font-size: 24px;
   cursor: pointer;
   color: var(--brown);
-  padding: 4px;
+  padding: 10px 12px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -1855,7 +1885,7 @@ a {
 }
 
 .mobile-menu {
-  display: none;
+  display: flex;
   position: fixed;
   top: 64px;
   left: 0;
@@ -1868,6 +1898,16 @@ a {
   gap: 40px;
   z-index: 49;
   border-bottom: 1px solid var(--border-gold);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .mobile-menu a {
@@ -1877,6 +1917,10 @@ a {
   color: var(--brown);
   letter-spacing: 0.06em;
   transition: color 0.2s;
+  padding: 12px 24px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
 }
 
 .mobile-menu a:hover {
