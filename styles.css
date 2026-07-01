@@ -169,8 +169,8 @@ a {
 
 .header-nav a {
   font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--brown);
   letter-spacing: 0.02em;
   transition: color 0.2s;
