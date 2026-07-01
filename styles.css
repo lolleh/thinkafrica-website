@@ -1866,9 +1866,10 @@ a {
 /* ---- Hamburger ---- */
 .hamburger {
   display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
   background: none;
   border: none;
-  font-size: 24px;
   cursor: pointer;
   color: var(--brown);
   padding: 10px 12px;
@@ -1876,6 +1877,28 @@ a {
   min-height: 44px;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 @media (min-width: 768px) {
@@ -1885,11 +1908,12 @@ a {
 }
 
 .mobile-menu {
-  display: flex;
+  display: none;
   position: fixed;
   top: 64px;
   left: 0;
   width: 100%;
+  height: calc(100dvh - 64px);
   height: calc(100vh - 64px);
   background: var(--cream);
   flex-direction: column;
@@ -1898,16 +1922,18 @@ a {
   gap: 40px;
   z-index: 49;
   border-bottom: 1px solid var(--border-gold);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }
 
 .mobile-menu.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  display: flex;
+  animation: menuFadeIn 0.2s ease;
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .mobile-menu a {
