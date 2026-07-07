@@ -86,6 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'message', name: 'message', required: true }
   ]);
 
+  handleFormSubmit('bookingForm', [
+    { id: 'bookName', name: 'name', required: true },
+    { id: 'bookEmail', name: 'email', required: true },
+    { id: 'bookPhone', name: 'phone', required: true },
+    { id: 'bookPlan', name: 'plan', required: true },
+    { id: 'bookServices', name: 'services', required: false },
+    { id: 'bookStart', name: 'startDate', required: true },
+    { id: 'bookEnd', name: 'endDate', required: true },
+    { id: 'bookGuests', name: 'guests', required: false },
+    { id: 'bookMessage', name: 'message', required: false }
+  ]);
+
   handleFormSubmit('contactForm2', [
     { id: 'name2', name: 'name', required: true },
     { id: 'email2', name: 'email', required: true },
