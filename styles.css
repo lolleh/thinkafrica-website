@@ -850,6 +850,95 @@ a {
   border-radius: 2px;
 }
 
+/* ---- Executive Director ---- */
+.ed-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .ed-section {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+.ed-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.ed-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.ed-content {
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .ed-content {
+    padding: 80px 64px;
+  }
+}
+
+.ed-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--burgundy);
+  margin-bottom: 32px;
+}
+
+.ed-content h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.ed-quote {
+  border-left: 2px solid var(--gold);
+  padding: 8px 24px;
+  margin-bottom: 24px;
+}
+
+.ed-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--brown);
+  line-height: 1.7;
+}
+
+.ed-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ed-author strong {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--burgundy);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ed-author span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
 /* ---- CTA Banner ---- */
 .cta-banner {
   display: grid;
